@@ -34,8 +34,6 @@ export const initialState = fromJS({
 
 function mainPageReducer(state = initialState, action) {
   switch (action.type) {
-    case types.DEFAULT_ACTION:
-      return state;
     case types.SAVE_NEW_POSITION:
       return state.merge({
         blocks: action.payload,

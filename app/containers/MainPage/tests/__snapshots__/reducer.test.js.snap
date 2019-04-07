@@ -1,0 +1,26 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`mainPageReducer handels save new position 1`] = `
+Immutable.Map {
+  "blocks": Immutable.List [
+    Immutable.Map {
+      "id": 1,
+      "bgc": "#F8BBD0",
+      "top": 0,
+      "left": 0,
+    },
+    Immutable.Map {
+      "id": 2,
+      "bgc": "#E1BEE7",
+      "top": 0,
+      "left": 120,
+    },
+    Immutable.Map {
+      "id": 3,
+      "bgc": "#42A5F5",
+      "top": 0,
+      "left": 240,
+    },
+  ],
+}
+`;
