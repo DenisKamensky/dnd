@@ -1,4 +1,4 @@
-import { fork, takeEvery, put } from 'redux-saga/effects';
+import { fork, takeLatest, put } from 'redux-saga/effects';
 import * as types from './constants';
 import * as actions from './actions';
 
@@ -6,8 +6,8 @@ const { log } = console;
 
 function* calculateBlockPosition(action) {
   const [elProps, newPos, blocks] = action.payload;
-  const newTop = elProps.top + newPos.y;
-  const newLeft = elProps.top + newPos.x;
+  const newTop = newPos.y;
+  const newLeft = newPos.x;
   const changedBlock = Object.assign({}, elProps, {
     top: newTop,
     left: newLeft,
@@ -24,6 +24,10 @@ function* calculateBlockPosition(action) {
 // Individual exports for testing
 export default function* mainPageSaga() {
   yield [
-    fork(takeEvery, types.CALCULATE_BLOCK_NEW_POSITION, calculateBlockPosition),
+    fork(
+      takeLatest,
+      types.CALCULATE_BLOCK_NEW_POSITION,
+      calculateBlockPosition,
+    ),
   ];
 }

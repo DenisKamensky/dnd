@@ -14,7 +14,7 @@ const spec = {
     return props;
   },
   endDrag(props, monitor) {
-    return props.handleEnd(props, monitor.getDifferenceFromInitialOffset());
+    return props.handleEnd(props, monitor.getSourceClientOffset());
   },
 };
 
