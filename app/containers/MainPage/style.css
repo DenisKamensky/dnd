@@ -1,0 +1,12 @@
+.container{
+  height: 100vh;
+  padding: 10px;
+  display: flex;
+  align-items: stretch;
+  justify-content: stretch;
+}
+
+.dragZone{
+  position: relative;
+  flex-basis: 100%;
+}
